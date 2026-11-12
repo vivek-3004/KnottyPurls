@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KnottyPurls — Handmade Crochet Boutique | @knottypurlsofficial</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fredoka', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            cream: '#FFFDF9',
+            blush: {
+              50: '#FFF1F5',
+              100: '#FCE7F3',
+              200: '#FBCFE8',
+              400: '#F472B6',
+              500: '#EC4899',
+              600: '#DB2777',
+            },
+            cocoa: {
+              700: '#5C4446',
+              800: '#3D2C2E',
+              900: '#2A1D1F',
+            },
+            butter: '#FEF3C7',
+            sage: '#D1FAE5',
+            lavender: '#EDE9FE',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-cream text-cocoa-800 antialiased selection:bg-blush-200 selection:text-cocoa-900">
+
+  <!-- Cute Animated Marquee Banner -->
+  <div class="bg-gradient-to-r from-blush-400 via-pink-400 to-rose-400 text-white text-xs sm:text-sm font-medium py-2 overflow-hidden">
+    <div class="animate-marquee whitespace-nowrap">
+      <span class="mx-6">🧶 Handmade with love</span>
+      <span class="mx-6">💐 Custom Bouquets &amp; Amigurumi</span>
+      <span class="mx-6">📦 Shipping Pan India</span>
+      <span class="mx-6">⏳ Place orders early to get them in time</span>
+      <span class="mx-6">💬 Direct WhatsApp Ordering</span>
+      <span class="mx-6">🧶 Handmade with love</span>
+      <span class="mx-6">💐 Custom Bouquets &amp; Amigurumi</span>
+      <span class="mx-6">📦 Shipping Pan India</span>
+      <span class="mx-6">⏳ Place orders early to get them in time</span>
+      <span class="mx-6">💬 Direct WhatsApp Ordering</span>
+    </div>
+  </div>
+
+  <!-- Sticky Glass Navbar -->
+  <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-blush-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <a href="#top" class="flex items-center gap-2.5 group">
+        <span class="w-10 h-10 rounded-2xl bg-blush-100 border border-blush-200 flex items-center justify-center text-xl shadow-sm group-hover:rotate-12 transition-transform">🧶</span>
+        <div>
+          <span class="font-display font-bold text-xl tracking-tight text-cocoa-900 block leading-none">KnottyPurls</span>
+          <span class="text-[11px] text-blush-600 font-medium">@knottypurlsofficial</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-cocoa-700">
+        <a href="#highlights" class="hover:text-blush-600 transition-colors">Highlights</a>
+        <a href="#shop" class="hover:text-blush-600 transition-colors">Shop</a>
+        <a href="#how-to-order" class="hover:text-blush-600 transition-colors">How to Order</a>
+        <a href="#about" class="hover:text-blush-600 transition-colors">About</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="open-wishlist-btn" type="button" class="relative p-2.5 rounded-full bg-blush-50 hover:bg-blush-100 text-blush-600 transition-all active:scale-95" aria-label="View saved items" title="Saved Favorites">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <span id="wishlist-count" class="hidden absolute -top-1 -right-1 w-5 h-5 rounded-full bg-blush-500 text-white text-[11px] font-bold flex items-center justify-center">0</span>
+        </button>
+
+        <button id="open-cart-btn" type="button" class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-cocoa-800 hover:bg-cocoa-900 text-white text-sm font-medium shadow-sm transition-all active:scale-95">
+          <span>🛍️</span>
+          <span class="hidden sm:inline">Crochet Bag</span>
+          <span id="cart-count" class="px-2 py-0.5 rounded-full bg-blush-400 text-white text-xs font-bold">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Cute Animated Hero Section -->
+    <section class="relative overflow-hidden pt-8 pb-14 sm:pt-12 sm:pb-20">
+      <div class="pointer-events-none absolute top-10 left-6 text-3xl opacity-70 animate-float">🌸</div>
+      <div class="pointer-events-none absolute bottom-10 left-1/4 text-2xl opacity-60 animate-float-slow">✨</div>
+      <div class="pointer-events-none absolute top-16 right-10 text-3xl opacity-70 animate-float-slow">🌼</div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="space-y-5 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blush-100 text-blush-600 text-xs sm:text-sm font-semibold shadow-sm">
+            <span class="animate-wiggle inline-block">🧶</span>
+            <span>Handmade with love • Shipping Pan India</span>
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-cocoa-900 leading-[1.1]">
+            Cozy Crochet, <span class="text-blush-500">Stitched</span> Just For You
+          </h1>
+
+          <p class="text-base sm:text-lg text-cocoa-700 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Welcome to <strong>KnottyPurls</strong>! From everlasting crochet flower bouquets and adorable amigurumi dolls to dainty hair bows, festive rakhis, and reusable gajras — every piece is lovingly handcrafted to order.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1">
+            <a href="#shop" class="px-6 py-3.5 rounded-full bg-blush-500 hover:bg-blush-600 text-white font-semibold shadow-md shadow-blush-200 transition-all hover:-translate-y-0.5 active:scale-95">
+              Explore Products ✨
+            </a>
+            <button id="hero-custom-btn" type="button" class="px-6 py-3.5 rounded-full bg-white hover:bg-blush-50 text-cocoa-800 font-semibold border-2 border-blush-200 transition-all hover:-translate-y-0.5 active:scale-95">
+              💬 Custom Order on WhatsApp
+            </button>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs sm:text-sm text-cocoa-700">
+            <span class="inline-flex items-center gap-1.5 bg-butter/70 px-3 py-1.5 rounded-xl">⏳ Place orders early to get them in time</span>
+            <span class="inline-flex items-center gap-1.5 bg-sage/70 px-3 py-1.5 rounded-xl">📦 Pan India Shipping</span>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -inset-3 bg-gradient-to-tr from-blush-200 via-butter to-lavender rounded-[2.2rem] blur-xl opacity-60"></div>
+          <div class="relative rounded-[2rem] overflow-hidden border-4 border-white shadow-xl bg-white">
+            <img src="images/hero-crochet.jpg" alt="KnottyPurls cozy handmade crochet yarn and flowers" class="w-full h-64 sm:h-80 lg:h-[400px] object-cover" />
+            <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-auto bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-md flex items-center gap-3">
+              <span class="text-2xl animate-wiggle">💐</span>
+              <div class="text-left">
+                <p class="font-display font-semibold text-sm text-cocoa-900">100% Handmade Crochet</p>
+                <p class="text-xs text-cocoa-700">Order directly via WhatsApp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram Story Highlights Bar -->
+    <section id="highlights" class="py-6 border-y border-blush-100 bg-white/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="font-display text-lg sm:text-xl font-bold text-cocoa-900 flex items-center gap-2">
+            <span>✨</span> Story Highlights from <span class="text-blush-500">@knottypurlsofficial</span>
+          </h2>
+          <a href="https://www.instagram.com/knottypurlsofficial/" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm font-semibold text-blush-600 hover:underline">
+            Follow on Instagram →
+          </a>
+        </div>
+
+        <div id="highlights-bar" class="flex items-center gap-4 sm:gap-6 overflow-x-auto no-scrollbar pb-2"></div>
+      </div>
+    </section>
+
+    <!-- Shop & Filterable Product Catalog -->
+    <section id="shop" class="py-12 sm:py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-blush-500">Curated Crochet Catalog</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold text-cocoa-900 mt-1">All Handmade Creations</h2>
+            <p class="text-sm text-cocoa-700 mt-1">Pick your favorites, customize colors, and send your bag straight to WhatsApp.</p>
+          </div>
+
+          <div class="relative w-full md:w-72">
+            <input id="search-input" type="text" placeholder="Search bouquets, bows, dolls..." class="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-blush-200 focus:outline-none focus:ring-2 focus:ring-blush-400 text-sm shadow-sm" />
+            <svg class="w-4 h-4 text-cocoa-700 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+        </div>
+
+        <div id="category-pills" class="flex flex-wrap items-center gap-2 mb-8"></div>
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+
+        <div id="empty-state" class="hidden text-center py-14 bg-white rounded-3xl border border-blush-100">
+          <p class="text-4xl mb-2">🧶</p>
+          <p class="font-display text-xl font-bold text-cocoa-900">No crochet pieces matched your search</p>
+          <p class="text-sm text-cocoa-700 mt-1 mb-4">Try another keyword or ask for a custom order!</p>
+          <button id="reset-filters-btn" type="button" class="px-5 py-2.5 rounded-full bg-blush-500 text-white text-sm font-semibold hover:bg-blush-600 transition-colors">Show All Products</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Order on WhatsApp Section -->
+    <section id="how-to-order" class="py-12 sm:py-16 bg-gradient-to-b from-blush-50/70 to-cream">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-10 reveal">
+          <span class="text-xs font-bold uppercase tracking-wider text-blush-500">Easy &amp; Personal</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-cocoa-900 mt-1">How Ordering Works</h2>
+          <p class="text-sm sm:text-base text-cocoa-700 mt-2">Because every KnottyPurls piece is handmade to order, we finalize quotes, yarn shades, and delivery dates personally with you on WhatsApp.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="reveal bg-white rounded-3xl p-6 border border-blush-100 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-2xl bg-blush-100 text-2xl flex items-center justify-center mb-4">1️⃣</div>
+            <h3 class="font-display text-xl font-bold text-cocoa-900 mb-2">Pick &amp; Customize</h3>
+            <p class="text-sm text-cocoa-700 leading-relaxed">Browse bouquets, amigurumi, bows, gajras, or rakhis. Add color preferences or custom notes right on the product card.</p>
+          </div>
+
+          <div class="reveal bg-white rounded-3xl p-6 border border-blush-100 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-2xl bg-butter text-2xl flex items-center justify-center mb-4">2️⃣</div>
+            <h3 class="font-display text-xl font-bold text-cocoa-900 mb-2">Connect to WhatsApp</h3>
+            <p class="text-sm text-cocoa-700 leading-relaxed">Click <strong>Order on WhatsApp</strong> from your Crochet Bag. Your entire item list and notes are pre-filled automatically.</p>
+          </div>
+
+          <div class="reveal bg-white rounded-3xl p-6 border border-blush-100 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-2xl bg-sage text-2xl flex items-center justify-center mb-4">3️⃣</div>
+            <h3 class="font-display text-xl font-bold text-cocoa-900 mb-2">Crafted &amp; Shipped</h3>
+            <p class="text-sm text-cocoa-700 leading-relaxed">Confirm your quote and delivery timeline (remember to order early!) and we'll stitch and ship anywhere Pan India.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Happy Customers Section -->
+    <section id="about" class="py-12 sm:py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 items-center">
+        <div class="reveal bg-white rounded-[2rem] p-7 sm:p-9 border border-blush-100 shadow-sm space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lavender text-purple-800 text-xs font-semibold">
+            <span>💌</span> About KnottyPurls
+          </div>
+          <h2 class="font-display text-3xl font-bold text-cocoa-900">Stitched Slowly, Gifted Joyfully</h2>
+          <p class="text-sm sm:text-base text-cocoa-700 leading-relaxed">
+            <strong>KnottyPurls</strong> (<code>@knottypurlsofficial</code>) is an independent handmade crochet studio creating everlasting flower bouquets, custom amigurumi characters, dainty hair bows, reusable jasmine gajras, and festive rakhis.
+          </p>
+          <ul class="space-y-2.5 text-sm text-cocoa-700">
+            <li class="flex items-start gap-2.5"><span>🧶</span><span><strong>Handmade with love:</strong> Every stitch is crafted by hand with soft yarn.</span></li>
+            <li class="flex items-start gap-2.5"><span>🎨</span><span><strong>Custom orders welcome:</strong> Request your favorite colors, characters, or bouquet size.</span></li>
+            <li class="flex items-start gap-2.5"><span>⏳</span><span><strong>Order early:</strong> Handmade pieces take time—place orders early to get them in time!</span></li>
+            <li class="flex items-start gap-2.5"><span>📦</span><span><strong>Shipping Pan India:</strong> Carefully packed and delivered across India.</span></li>
+          </ul>
+        </div>
+
+        <div class="reveal bg-gradient-to-br from-blush-100 via-butter/70 to-lavender/70 rounded-[2rem] p-7 sm:p-9 border border-white shadow-sm space-y-5">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">🥰</span>
+            <div>
+              <h3 class="font-display text-2xl font-bold text-cocoa-900">Happy Customers &amp; Aesthetics</h3>
+              <p class="text-xs text-cocoa-700">Featured in our Instagram Story Highlights</p>
+            </div>
+          </div>
+          <p class="text-sm sm:text-base text-cocoa-700 leading-relaxed">
+            Whether it's a Spider-Man amigurumi surprise, a sunflower bouquet that never wilts, or a handmade crochet hair bow, we love seeing your unboxing smiles!
+          </p>
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div>
+              <p class="font-display font-bold text-cocoa-900 text-sm">Ready to start an order?</p>
+              <p class="text-xs text-cocoa-700">Chat with us on WhatsApp or visit Instagram</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button id="about-whatsapp-btn" type="button" class="px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-semibold shadow-sm transition-all">
+                WhatsApp Checkout
+              </button>
+              <a href="https://www.instagram.com/knottypurlsofficial/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-white hover:bg-blush-50 text-blush-600 border border-blush-200 text-xs font-semibold transition-all">
+                Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-blush-100 bg-white py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-cocoa-700">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🧶</span>
+        <span><strong>KnottyPurls</strong> • Handmade with love • Shipping Pan India</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/knottypurlsofficial/" target="_blank" rel="noopener noreferrer" class="hover:text-blush-600 font-medium">@knottypurlsofficial</a>
+        <button id="footer-settings-btn" type="button" class="hover:text-blush-600 font-medium underline">WhatsApp Store Settings</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <button id="floating-wa-btn" type="button" class="fixed bottom-5 right-5 z-30 flex items-center gap-2 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm shadow-lg shadow-emerald-500/30 transition-all hover:scale-105 active:scale-95">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.188.109-1.922-.125-.453-.141-1.031-.344-1.766-.656-3.078-1.328-5.078-4.438-5.234-4.641-.156-.203-1.25-1.656-1.25-3.156s.781-2.234 1.063-2.547c.281-.313.609-.391.813-.391.203 0 .406.016.578.016.188 0 .438-.078.688.516.25.609.859 2.094.938 2.25.078.156.125.344.016.547-.109.203-.156.344-.313.516-.156.172-.328.391-.469.516-.156.156-.313.328-.141.641.172.313.781 1.281 1.672 2.078 1.156 1.031 2.125 1.344 2.438 1.5.313.156.484.125.672-.078.188-.203.781-.906.984-1.219.203-.313.406-.266.688-.156.281.109 1.781.844 2.094 1 .313.156.516.234.594.359.078.125.078.734-.172 1.438z"/></svg>
+    <span class="hidden sm:inline">Order on WhatsApp</span>
+  </button>
+
+  <!-- Slide-Over Crochet Bag Drawer -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+    <div id="cart-backdrop" class="absolute inset-0 bg-cocoa-900/40 backdrop-blur-xs"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-cream shadow-2xl flex flex-col">
+      <div class="p-5 border-b border-blush-100 flex items-center justify-between bg-white">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🛍️</span>
+          <h3 class="font-display text-xl font-bold text-cocoa-900">Your Crochet Bag</h3>
+        </div>
+        <button id="close-cart-btn" type="button" class="p-2 rounded-full hover:bg-blush-50 text-cocoa-700">✕</button>
+      </div>
+
+      <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-4"></div>
+
+      <div class="p-5 border-t border-blush-100 bg-white space-y-3">
+        <div class="flex items-center justify-between text-xs text-cocoa-700 bg-butter/60 px-3 py-2 rounded-xl">
+          <span>💬 Pricing is confirmed per custom request</span>
+          <span class="font-semibold">Pan India 📦</span>
+        </div>
+        <button id="checkout-wa-btn" type="button" class="w-full py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold shadow-md flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
+          <span>Proceed to WhatsApp Order</span>
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Customize / Quick-View Modal -->
+  <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div id="product-modal-backdrop" class="absolute inset-0 bg-cocoa-900/45 backdrop-blur-xs"></div>
+    <div class="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden animate-[popIn_0.25s_ease-out]">
+      <button id="close-product-modal" type="button" class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-blush-50 text-cocoa-800 shadow flex items-center justify-center font-bold">✕</button>
+      <div class="grid sm:grid-cols-2">
+        <div class="bg-blush-50 h-56 sm:h-auto">
+          <img id="modal-img" src="" alt="" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-5 sm:p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <span id="modal-category" class="inline-block px-2.5 py-0.5 rounded-full bg-blush-100 text-blush-600 text-[11px] font-bold uppercase tracking-wide"></span>
+            <h3 id="modal-title" class="font-display text-xl font-bold text-cocoa-900 mt-1.5"></h3>
+            <p id="modal-desc" class="text-xs sm:text-sm text-cocoa-700 mt-1.5 leading-relaxed"></p>
+            <p class="text-xs font-semibold text-blush-600 mt-2">✨ Made to Order · Quote on WhatsApp</p>
+          </div>
+
+          <div class="space-y-3">
+            <div>
+              <label for="modal-color" class="block text-xs font-semibold text-cocoa-800 mb-1">Yarn Color / Wrapping Preference</label>
+              <input id="modal-color" type="text" placeholder="e.g., Pastel pink wrap, sunflower yellow" class="w-full px-3 py-2 rounded-xl border border-blush-200 text-xs focus:outline-none focus:ring-2 focus:ring-blush-400" />
+            </div>
+
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold text-cocoa-800">Quantity</span>
+              <div class="flex items-center gap-2 bg-blush-50 rounded-full px-2 py-1">
+                <button id="modal-qty-minus" type="button" class="w-6 h-6 rounded-full bg-white text-cocoa-800 font-bold text-sm shadow-xs">-</button>
+                <span id="modal-qty" class="w-6 text-center text-sm font-bold">1</span>
+                <button id="modal-qty-plus" type="button" class="w-6 h-6 rounded-full bg-white text-cocoa-800 font-bold text-sm shadow-xs">+</button>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2 pt-1">
+              <button id="modal-add-btn" type="button" class="w-full py-2.5 rounded-full bg-blush-500 hover:bg-blush-600 text-white text-sm font-semibold shadow-sm transition-all active:scale-95">
+                Add to Crochet Bag 🛍️
+              </button>
+              <button id="modal-direct-wa-btn" type="button" class="w-full py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold shadow-sm transition-all active:scale-95">
+                Buy Now on WhatsApp 💬
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Checkout Modal -->
+  <div id="wa-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div id="wa-modal-backdrop" class="absolute inset-0 bg-cocoa-900/50 backdrop-blur-xs"></div>
+    <div class="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl p-6 max-h-[90vh] overflow-y-auto animate-[popIn_0.25s_ease-out]">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2.5">
+          <span class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg">💬</span>
+          <div>
+            <h3 class="font-display text-xl font-bold text-cocoa-900">WhatsApp Order Connect</h3>
+            <p class="text-xs text-cocoa-700">Send your bag directly to KnottyPurls</p>
+          </div>
+        </div>
+        <button id="close-wa-modal" type="button" class="p-2 rounded-full hover:bg-blush-50 text-cocoa-700">✕</button>
+      </div>
+
+      <div class="space-y-3.5">
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div>
+            <label for="wa-name" class="block text-xs font-semibold text-cocoa-800 mb-1">Your Name</label>
+            <input id="wa-name" type="text" placeholder="e.g., Ananya" class="w-full px-3 py-2 rounded-xl border border-blush-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+          </div>
+          <div>
+            <label for="wa-city" class="block text-xs font-semibold text-cocoa-800 mb-1">City / Pincode (Pan India)</label>
+            <input id="wa-city" type="text" placeholder="e.g., Mumbai 400001" class="w-full px-3 py-2 rounded-xl border border-blush-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div>
+            <label for="wa-date" class="block text-xs font-semibold text-cocoa-800 mb-1">Needed By Date (Optional)</label>
+            <input id="wa-date" type="date" class="w-full px-3 py-2 rounded-xl border border-blush-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+          </div>
+          <div>
+            <label for="wa-store-phone" class="block text-xs font-semibold text-cocoa-800 mb-1">KnottyPurls WhatsApp No.</label>
+            <input id="wa-store-phone" type="tel" placeholder="+91 98XXXXXXXX" class="w-full px-3 py-2 rounded-xl border border-blush-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+            <p class="text-[11px] text-cocoa-700 mt-0.5">Not public on IG header — enter shop number to open chat.</p>
+          </div>
+        </div>
+
+        <div>
+          <label for="wa-note" class="block text-xs font-semibold text-cocoa-800 mb-1">Extra Gift / Custom Note</label>
+          <input id="wa-note" type="text" placeholder="Any special colors, gift message, or custom request..." class="w-full px-3 py-2 rounded-xl border border-blush-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+        </div>
+
+        <div>
+          <span class="block text-xs font-semibold text-cocoa-800 mb-1">Live WhatsApp Message Preview</span>
+          <pre id="wa-preview" class="w-full p-3 rounded-2xl bg-emerald-50/70 border border-emerald-200 text-xs text-cocoa-800 whitespace-pre-wrap font-sans max-h-40 overflow-y-auto"></pre>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-2.5 pt-1">
+          <button id="send-wa-btn" type="button" class="flex-1 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm shadow-md transition-all active:scale-95">
+            Open WhatsApp Chat 💬
+          </button>
+          <button id="copy-wa-btn" type="button" class="px-5 py-3 rounded-full bg-blush-100 hover:bg-blush-200 text-blush-700 font-semibold text-sm transition-all active:scale-95">
+            Copy Message 📋
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story Highlight Viewer Modal -->
+  <div id="story-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div id="story-modal-backdrop" class="absolute inset-0 bg-cocoa-900/60 backdrop-blur-xs"></div>
+    <div class="relative w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden animate-[popIn_0.25s_ease-out]">
+      <div class="h-1.5 bg-blush-100">
+        <div class="h-full bg-gradient-to-r from-blush-400 to-amber-400 w-full"></div>
+      </div>
+      <div class="p-5 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span id="story-emoji" class="text-2xl"></span>
+          <div>
+            <h4 id="story-title" class="font-display font-bold text-cocoa-900"></h4>
+            <p class="text-[11px] text-cocoa-700">@knottypurlsofficial Highlight</p>
+          </div>
+        </div>
+        <button id="close-story-modal" type="button" class="p-1.5 rounded-full hover:bg-blush-50 text-cocoa-700">✕</button>
+      </div>
+      <div class="px-5 pb-6 space-y-4">
+        <img id="story-img" src="" alt="" class="w-full h-56 object-cover rounded-2xl border border-blush-100" />
+        <p id="story-desc" class="text-sm text-cocoa-700 leading-relaxed"></p>
+        <button id="story-filter-btn" type="button" class="w-full py-2.5 rounded-full bg-blush-500 hover:bg-blush-600 text-white text-sm font-semibold transition-all">
+          Shop This Highlight ✨
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 hidden px-5 py-2.5 rounded-full bg-cocoa-900 text-white text-xs sm:text-sm font-medium shadow-xl"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
