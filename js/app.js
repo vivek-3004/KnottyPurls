@@ -1,7 +1,7 @@
 // KnottyPurls (@knottypurlsofficial) E-Commerce App
 // Tip: Set DEFAULT_STORE_WHATSAPP to your 10-digit Indian number (with 91 prefix, e.g. '919876543210')
 
-const DEFAULT_STORE_WHATSAPP = '';
+const DEFAULT_STORE_WHATSAPP = '+91 88826 22175';
 
 const PRODUCTS = [
   {
@@ -598,7 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('send-wa-btn').addEventListener('click', () => {
     const rawPhone = document.getElementById('wa-store-phone').value.replace(/[^\d]/g, '');
     if (rawPhone.length < 10) {
-      showToast('Enter KnottyPurls WhatsApp number (e.g. 9198XXXXXXXX) or click Copy Message!');
+      showToast('+91 88826 22175');
       document.getElementById('wa-store-phone').focus();
       return;
     }
